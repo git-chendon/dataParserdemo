@@ -1,4 +1,4 @@
-package tcp;
+package tcp.chatRoom;
 
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -16,6 +16,7 @@ public class TcpServer3 {
     public static void main(String[] args) throws Exception {
         ServerSocket sc = new ServerSocket(8001);  //新建服务器
 
+
         //线程池
         ThreadPoolExecutor executor;
         executor=(ThreadPoolExecutor) Executors.newCachedThreadPool();
@@ -24,7 +25,7 @@ public class TcpServer3 {
         while (true){
             System.out.println("等待任务到来");
             Socket s = sc.accept();  //等待连接
-            Future<String> future = executor.submit(new Worker2(s));
+            executor.submit(new Client(s));
 
             System.out.printf("Server: Pool Size: %d\n",executor.getPoolSize());
             System.out.printf("Server: Active Count: %d\n",executor.getActiveCount());

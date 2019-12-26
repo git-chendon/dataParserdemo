@@ -1,4 +1,4 @@
-package tcp;
+package tcp.demo;
 
 import java.io.*;
 import java.net.Socket;
