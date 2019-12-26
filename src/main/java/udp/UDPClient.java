@@ -14,6 +14,7 @@ import java.util.Arrays;
 public class UDPClient {
     public static void main(String[] args) throws Exception{
         try {
+
             DatagramSocket socket = new DatagramSocket();
             String s = "这是测试数据11111";
             byte[] buffer = s.getBytes();
@@ -21,6 +22,9 @@ public class UDPClient {
             System.out.println("我要发送消息");
             socket.send(packet);
             System.out.println("我发送消息结束");
+
+
+
             Thread.sleep(1000L);
             byte[] buf = new byte[1024];
             DatagramPacket dp2 = new DatagramPacket(buf, buf.length);

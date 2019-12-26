@@ -19,7 +19,7 @@ public class TcpServer2 {
                 System.out.println("来了一个client");
                 new Thread(new Worker(s)).start();
             }
-            //ss.close();
+//            ss.close();
         }
         catch(Exception e)
         {

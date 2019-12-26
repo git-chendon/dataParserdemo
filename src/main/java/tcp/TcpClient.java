@@ -12,6 +12,7 @@ public class TcpClient {
     public static void main(String[] args) {
         try {
             Socket s = new Socket(InetAddress.getByName("127.0.0.1"),8001);
+
             //同一个通道，服务端的输出流就是客户端的输入流；服务端的输入流就是客户端的输出流
             InputStream ips = s.getInputStream();   //开启通道的输入流
             BufferedReader brNet = new BufferedReader(new InputStreamReader(ips));

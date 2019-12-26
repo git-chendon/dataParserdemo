@@ -23,6 +23,9 @@ public class UDPServer {
                 String s = new String(packet.getData(),0,packet.getLength());
                 System.out.println(s);
                 System.out.println("UdpRecv: 我接收到信息");
+
+
+
                 Thread.sleep(1000L);
                 System.out.println("UdpRecv: 我要发送信息");
                 String str = "hello world 222";
