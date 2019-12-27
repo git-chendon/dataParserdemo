@@ -25,7 +25,6 @@ public class SingelClient2 {
             ouThread.start();
             inThread.start();
         } catch (Exception e) {
-
             e.printStackTrace();
         }
     }

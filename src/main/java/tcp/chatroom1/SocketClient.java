@@ -25,8 +25,8 @@ public class SocketClient extends Socket {
         client = this;
         out = new PrintWriter(this.getOutputStream(), true);
         in = new BufferedReader(new InputStreamReader(this.getInputStream()));
-        new readLineThread();
-        out.println("我已经连接服务器");
+        new readLineThread();           //这里是Thread，直接new即可.start启动
+
         while(true){
             in = new BufferedReader(new InputStreamReader(System.in));
             String input = in.readLine();
@@ -52,10 +52,14 @@ public class SocketClient extends Socket {
         public void run() {
             try {
                 while(true){
+
+
+
+
                     String result = buff.readLine();
-                    if("byeClient".equals(result)){//客户端申请退出，服务端返回确认退出
+                    if("byeClient".equals(result)){       //客户端申请退出，服务端返回确认退出
                         break;
-                    }else{//输出服务端发送消息
+                    }else{                                //输出服务端发送消息
                         System.out.println(result);
                     }
                 }
